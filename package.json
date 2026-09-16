@@ -1,0 +1,50 @@
+{
+  "name": "@searchcode/mcp",
+  "description": "MCP server for searchcode.ai — let AI agents search the source code of the public web and identify site technologies.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "searchcode.ai <hello@searchcode.ai>",
+  "homepage": "https://searchcode.ai/docs/",
+  "keywords": [
+    "searchcode",
+    "source-code-search",
+    "website-technology",
+    "technology-lookup",
+    "web-intelligence",
+    "builtwith-alternative",
+    "publicwww-alternative",
+    "mcp",
+    "model-context-protocol",
+    "mcp-server",
+    "ai-agent",
+    "claude"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/searchcode-ai/searchcode-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/searchcode-ai/searchcode-mcp/issues"
+  },
+  "bin": {
+    "searchcode-mcp": "src/index.js"
+  },
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "@searchcode/core": "^0.1.0",
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^4.4.3"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  }
+}
