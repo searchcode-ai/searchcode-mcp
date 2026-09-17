@@ -1,6 +1,7 @@
 {
   "name": "@searchcode/mcp",
   "description": "MCP server for searchcode.ai — let AI agents search the source code of the public web and identify site technologies.",
+  "mcpName": "io.github.searchcode-ai/searchcode-mcp",
   "version": "0.1.0",
   "license": "MIT",
   "type": "module",
