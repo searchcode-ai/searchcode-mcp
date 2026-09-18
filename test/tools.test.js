@@ -49,6 +49,16 @@ test('every tool describes what it does', () => {
   }
 });
 
+test('the entrypoint guard survives the npm bin symlink', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const source = await readFile(new URL('../src/index.js', import.meta.url), 'utf8');
+  assert.ok(
+    !source.includes('import.meta.url === '),
+    'comparing import.meta.url to argv[1] breaks when npm installs the bin as a symlink',
+  );
+  assert.match(source, /realpathSync/, 'the entrypoint check must resolve symlinks');
+});
+
 test('every tool declares a schema for each contract parameter', () => {
   const tools = server._registeredTools ?? server.registeredTools ?? {};
   for (const route of mcpRoutes) {
